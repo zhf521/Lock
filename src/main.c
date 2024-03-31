@@ -26,6 +26,7 @@ loop:
     while (1) {
         // 检测按键是否按下
         inputKeyValue = MatrixKey_GetValue();
+        // 输入密码
         if (inputKeyValue >= '0' && inputKeyValue <= '9') {
             Delay_ms(100);
             if (MatrixKey_GetValue() == inputKeyValue) {
@@ -39,6 +40,7 @@ loop:
                 }
             }
         }
+        // 确认输入密码
         if (inputKeyValue == '*') {
             Delay_ms(100);
             if (MatrixKey_GetValue() == inputKeyValue) {
@@ -61,6 +63,7 @@ loop:
                 }
             }
         }
+        //    清除输入密码
         if (inputKeyValue == '#') {
             Delay_ms(100);
             if (MatrixKey_GetValue() == inputKeyValue) {
