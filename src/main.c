@@ -61,5 +61,14 @@ loop:
                 }
             }
         }
+        if (inputKeyValue == '#') {
+            Delay_ms(100);
+            if (MatrixKey_GetValue() == inputKeyValue) {
+                memset(inputPassword, '\0', sizeof(inputPassword));
+                count = 0;
+                OLED_ShowString(20, 24, "_ _ _ _ _ _", OLED_8X16);
+                OLED_Update();
+            }
+        }
     }
 }
